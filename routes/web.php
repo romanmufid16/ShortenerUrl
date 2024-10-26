@@ -1,10 +1,8 @@
 <?php
 
-use App\Livewire\UrlShortener;
+use App\Http\Controllers\UrlController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [UrlController::class, 'index'])->name('index');
+Route::post('/', [UrlController::class, 'store'])->name('storeUrl');
 
-Route::post('/', UrlShortener::class);
