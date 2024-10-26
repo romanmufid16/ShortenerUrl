@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Url;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 
@@ -22,6 +23,6 @@ class DeleteExpiredUrlJob implements ShouldQueue
      */
     public function handle(): void
     {
-        //
+        Url::where('expires_at', '<=', now())->delete();
     }
 }

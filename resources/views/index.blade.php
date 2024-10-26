@@ -12,7 +12,7 @@
         </nav>
         <div class="flex flex-col lg:flex-row justify-between items-center px-24 transition-transform duration-300 ease-in-out">
             <div class="bg-white max-w-xl p-5 rounded-xl">
-                <form action="" method="post" class="w-full flex flex-col px-6">
+                <form wire:submit.prevent="shortenUrl" class="w-full flex flex-col px-6">
                     <label for="longurl" class="block mb-2 font-semibold">Shorten a long URL</label>
                     <input type="text" name="original_url" id="" class="block border p-2  mb-2 rounded-md border-gray-300 w-full">
                     <label for="customlink" class="block mb-2 font-semibold">Customize your link</label>
